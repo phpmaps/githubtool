@@ -1,0 +1,71 @@
+{
+    "hash": "1274622381fa53eb2168f7e276218341",
+    "packages": [
+        {
+            "package": "doctrine/common",
+            "version": "dev-master",
+            "alias-pretty-version": "2.4.x-dev",
+            "alias-version": "2.4.9999999.9999999-dev"
+        },
+        {
+            "package": "doctrine/common",
+            "version": "dev-master",
+            "source-reference": "bc6bc47132613b28a58b7293dfd7872d9e3bcff3",
+            "commit-date": "1357665632"
+        },
+        {
+            "package": "hybridauth/hybridauth",
+            "version": "dev-master",
+            "source-reference": "bea75d4ac4c5f325bf2bc9e96236daf792a40002",
+            "commit-date": "1357032757"
+        },
+        {
+            "package": "socalnick/scn-social-auth",
+            "version": "dev-master",
+            "source-reference": "1.5.0",
+            "commit-date": "1356123267"
+        },
+        {
+            "package": "zendframework/zend-version",
+            "version": "2.0.6"
+        },
+        {
+            "package": "zendframework/zendframework",
+            "version": "dev-develop",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "zendframework/zendframework",
+            "version": "dev-develop",
+            "source-reference": "4745db68b2eb15799a3026a07fb883cd6b1367d3",
+            "commit-date": "1357761241"
+        },
+        {
+            "package": "zendframework/zendservice-recaptcha",
+            "version": "2.0.1"
+        },
+        {
+            "package": "zf-commons/zfc-base",
+            "version": "dev-master",
+            "source-reference": "38990ad5f51002dd271ab676b90a3d59728190e2",
+            "commit-date": "1351100548"
+        },
+        {
+            "package": "zf-commons/zfc-user",
+            "version": "dev-master",
+            "source-reference": "18c4fc2e71a53b558e1feec51c9c5fb10a070188",
+            "commit-date": "1355010566"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "zf-commons/zfc-base": 20,
+        "zf-commons/zfc-user": 20,
+        "socalnick/scn-social-auth": 20
+    }
+}
