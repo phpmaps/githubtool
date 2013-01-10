@@ -1,2 +1,2 @@
-githubtool
+githubtool test
 ==========
