@@ -1,0 +1,62 @@
+<div class="row-fluid">
+<ol class="progtrckr" data-progtrckr-steps="5">
+    <li class="progtrckr-done">Repository Details</li><!--
+ --><li class="progtrckr-done">Ownership and Team</li><!--
+ --><li class="progtrckr-todo">Instructions</li><!--
+ --><li class="progtrckr-todo">Requirements</li><!--
+ --><li class="progtrckr-todo">Acknowlegement</li>
+</ol>
+</div>
+
+<div class="row-fluid" style="margin-top:28px; border-bottom: 1px solid #eeeeee;">
+  <div class="span4">List people who have access to this repository?</div>
+  <div class="span4 offset4" id="flashmessage" style="text-decoration:italic;"></div>
+</div>
+
+<a onclick="addMemberAction();"
+					class="sp-button sp-button-icon-left ui-state-default ui-corner-all" style="margin-top:16px; margin-bottom:11px;"><span
+					class="ui-icon ui-icon-circle-plus"></span>Add team member</a>
+					
+<div class="row-fluid" style="margin-top:6px; margin-bottom:10px; height:250px;">
+  <div class="span12">
+    <div class="row-fluid">
+      <div class="span12" id="members-section">
+      <div class="row-fluid">
+      <?php foreach($models as $model):?>
+          <input type="hidden" maxlength="10" id="readme-value"value="<?php echo $model->id; ?>"/>
+          <input type="hidden" maxlength="60" id="readme-count" value="<?php echo count($model->members); ?>"/>
+      <?php $i = 0; ?>
+      <?php foreach($model->members as $member):?>
+      
+      <div class="row-fluid" id="members-section-row-<?php echo $i; ?>">
+          <div class="span3" style="margin-top:6px; margin-bottom: 6px;">
+          	<input type="text" maxlength="60" id="teamate-<?php echo $i; ?>" value="<?php echo $member ?>"/>
+          </div>
+          <div class="span3" style="margin-top:6px; margin-bottom: 6px;">
+          	<input type="text" maxlength="60" id="email-<?php echo $i; ?>" value="<?php echo $member ?>"/>
+          </div>
+          <div class="span3" id="radio-jquery-ui">
+  			<input id="radio1" name="radio" type="radio" /><label for="radio1">Is admin?</label>
+			</div>
+          <div class="span3" style="margin-top:6px; margin-bottom: 6px;">
+          	<span onclick="removeMembersAction(this);" class="ui-icon ui-icon-closethick" id="remove-<?php echo $i; ?>"></span>
+          </div>
+          </div>
+          <?php $i = $i + 1; ?>
+          <?php endforeach;?>
+       <?php endforeach; ?>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row-fluid" style="margin-top:28px;">
+<div style="display: block; height:2px; margin-top:8px; border-top:2px solid #eeeeee;"></div>
+  <div class="span12 offset8" style="margin-top:10px;">
+  <a onclick="addRequirementAction();"
+					class="sp-button sp-button-icon-left ui-state-default ui-corner-all" style="margin-top:6px;"><span
+					class="ui-icon ui-icon-seek-next"></span>Next</a>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="row-fluid">
+<ol class="progtrckr" data-progtrckr-steps="5">
+    <li class="progtrckr-done">Repository Details</li><!--
+ --><li class="progtrckr-done">Ownership and Team</li><!--
+ --><li class="progtrckr-todo">Instructions</li><!--
+ --><li class="progtrckr-todo">Requirements</li><!--
+ --><li class="progtrckr-todo">Acknowlegement</li>
+</ol>
+</div>
+
+<p>This is the sess val: <?php echo $models->sess; ?></p>
+<input type="hidden" maxlength="10" id="readme-value"value="<?php echo $models->id; ?>"/> 
+<input type="hidden" maxlength="60" id="readme-count" value="<?php echo count($models->features); ?>"/>
+<div class="row-fluid" style="margin-top: 28px; border-bottom: 1px solid #eeeeee;">
+<div class="span12">
+	<div class="span8">Create a repository name?</div>
+	<div class="span4" id="flashmessage" style="text-decoration: italic;"></div>
+</div>
+</div>
+
+<div class="row-fluid" id="reponame-section" style="margin-top: 6px; margin-bottom: 10px;">
+	<div class="span12" id="radio-jquery-ui">
+		<input id="reproname" name="text" type="text" value="<?php echo $models->reponame[0]; ?>" />
+	</div>
+</div>
+					
+<div class="row-fluid" style="margin-top: 28px; border-bottom: 1px solid #eeeeee;">
+	<div class="span12">Create a more meaningful project title?</div>
+</div>
+
+<div class="row-fluid" style="margin-top: 6px; margin-bottom: 10px;" id="title-section">
+	<input id="title" name="text" type="text" value="<?php echo $models->title[0]; ?>" />
+</div>
+					
+					
+					
+<div class="row-fluid" style="margin-top: 28px; border-bottom: 1px solid #eeeeee;">
+<div class="span12">How would you describe your project?</div>
+</div>
+
+<div class="row-fluid" style="margin-top: 6px; margin-bottom: 10px;" id="description-section">
+<textarea name="description" id="description" class="text ui-widget-content ui-corner-all" value="<?php echo $models->description[0]; ?>"><?php echo $models->description[0]; ?></textarea>
+</div>
+
+<div class="row-fluid" style="margin-top:28px; border-bottom: 1px solid #eeeeee;">
+<div class="span12">What features does your product offer? </div>
+</div>
+
+
+<div class="row-fluid" style="margin-top: 6px; margin-bottom: 10px; height: 250px;" id="features-section">
+
+
+<div class="row-fluid" >
+<a onclick="addFeatureAction();"
+					class="sp-button sp-button-icon-left ui-state-default ui-corner-all" style="margin-top:16px; margin-bottom:11px;"><span
+					class="ui-icon ui-icon-circle-plus"></span>Add feature</a>
+</div>
+					
+<?php foreach($models->features as $feature):?>
+<?php $i = 0;?>
+<div class="row-fluid" id="features-section-row-<?php echo $i; ?>">
+<div class="span6" style="margin-top: 6px; margin-bottom: 6px;">
+	<input type="text" maxlength="60" id="features-<?php echo $i; ?>" value="<?php echo $feature; ?>" />
+</div>
+<div class="span6" style="margin-top: 6px; margin-bottom: 6px;">
+<span onclick="removeFeatureAction(this);" class="ui-icon ui-icon-closethick" id="remove-<?php echo $i; ?>"></span>
+</div>
+</div>
+<?php $i = $i + 1; ?>
+<?php endforeach;?>
+</div>
+  
+  
+					
+
+<div class="row-fluid" style="margin-top: 28px;">
+	<div
+		style="display: block; height: 2px; margin-top: 8px; border-top: 2px solid #eeeeee;"></div>
+	<div class="span12 offset8" style="margin-top: 10px;">
+		<a onclick="addRequirementAction();"
+			class="sp-button sp-button-icon-left ui-state-default ui-corner-all"
+			style="margin-top: 6px;"><span class="ui-icon ui-icon-seek-next"></span>Next</a>
+	</div>
+</div>

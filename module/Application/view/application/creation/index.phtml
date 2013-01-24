@@ -1,0 +1,16 @@
+
+<div>
+	<h2>Test</h2>
+</div>
+
+<div>
+<?php foreach ($readmes as $readme) : ?>
+<table>
+<tr>
+    <td><?php echo $this->escapeHtml($readme->title);?></td>
+    <td><?php echo $this->escapeHtml($readme->reproname);?></td>
+
+</tr>
+<?php endforeach; ?>
+</table>
+</div>

@@ -1,0 +1,57 @@
+<div class="row-fluid">
+<ol class="progtrckr" data-progtrckr-steps="5">
+    <li class="progtrckr-done">Repository Details</li><!--
+ --><li class="progtrckr-done">Ownership and Team</li><!--
+ --><li class="progtrckr-todo">Instructions</li><!--
+ --><li class="progtrckr-todo">Requirements</li><!--
+ --><li class="progtrckr-todo">Acknowlegement</li>
+</ol>
+</div>
+
+<div class="row-fluid" style="margin-top:28px; border-bottom: 1px solid #eeeeee;">
+  <div class="span4">What are your instructions for getting started?</div>
+  <div class="span4 offset4" id="flashmessage" style="text-decoration:italic;"></div>
+</div>
+
+<a onclick="addInstructionAction();"
+					class="sp-button sp-button-icon-left ui-state-default ui-corner-all" style="margin-top:16px; margin-bottom:11px;"><span
+					class="ui-icon ui-icon-circle-plus"></span>Create intstuction item</a>
+					
+<div class="row-fluid" style="margin-top:6px; margin-bottom:10px; height:250px;">
+  <div class="span12">
+    <div class="row-fluid">
+      <div class="span6" id="instructions-section">
+      <div class="row-fluid">
+      <?php foreach($models as $model):?>
+          <input type="hidden" maxlength="10" id="readme-value"value="<?php echo $model->id; ?>"/>
+          <input type="hidden" maxlength="60" id="readme-count" value="<?php echo count($model->requirements); ?>"/>
+      <?php $i = 0; ?>
+      <?php foreach($model->instructions as $instruction):?>
+      
+      <div class="row-fluid" id="instructions-section-row-<?php echo $i; ?>">
+          <div class="span6" style="margin-top:6px; margin-bottom: 6px;">
+          	<input type="text" maxlength="60" id="instructions-<?php echo $i; ?>" value="<?php echo $instruction ?>"/>
+          </div>
+          <div class="span6" style="margin-top:6px; margin-bottom: 6px;">
+          	<span onclick="removeRequirementAction(this);" class="ui-icon ui-icon-closethick" id="remove-<?php echo $i; ?>"></span>
+          </div>
+          </div>
+          <?php $i = $i + 1; ?>
+          <?php endforeach;?>
+       <?php endforeach; ?>
+        </div>
+      </div>
+      <div class="span6"><div style="margin-top: 20px; margin-left:8px; margin-right:8px;">Live content...</div></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row-fluid" style="margin-top:28px;">
+<div style="display: block; height:2px; margin-top:8px; border-top:2px solid #eeeeee;"></div>
+  <div class="span12 offset8" style="margin-top:10px;">
+  <a onclick="addRequirementAction();"
+					class="sp-button sp-button-icon-left ui-state-default ui-corner-all" style="margin-top:6px;"><span
+					class="ui-icon ui-icon-seek-next"></span>Next</a>
+  </div>
+</div>

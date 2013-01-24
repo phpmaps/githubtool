@@ -1,0 +1,3 @@
+USE globebet_ghub;
+INSERT INTO readme (user, reproname, title, description, livelink, features, instructions, requirements, resourcelinks)
+    VALUES  ('fakeuser','fakereproname','fake repro title', 'fake description', 'fake livelink', 'fake features', 'fake instructions', 'fake requirements', 'fake resourcelink');
