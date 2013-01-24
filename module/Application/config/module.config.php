@@ -50,6 +50,20 @@ return array(
                     ),
                 ),
             ),
+            'creation' => array(
+            		'type'    => 'segment',
+            		'options' => array(
+            				'route'    => '/creation[/:action][/:id]',
+            				'constraints' => array(
+            						'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+            						'id'     => '[0-9]+',
+            				),
+            				'defaults' => array(
+            						'controller' => 'Application\Controller\Creation',
+            						'action'     => 'index',
+            				),
+            		),
+            ),
         ),
     ),
     'service_manager' => array(
@@ -69,7 +83,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Creation' => 'Application\Controller\CreationController'
         ),
     ),
     'view_manager' => array(

@@ -11,6 +11,11 @@ namespace Application;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Application\Model\Readme;
+use Application\Model\ReadmeTable;
+use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\TableGateway\TableGateway;
+use Application\Model\SerializeToJson;
 
 class Module
 {
@@ -36,5 +41,28 @@ class Module
                 ),
             ),
         );
+    }
+    
+    public function getServiceConfig()
+    {
+    	return array(
+    			'factories' => array(
+    					'Application\Model\ReadmeTable' =>  function($sm) {
+    						$tableGateway = $sm->get('ReadmeTableGateway');
+    						$table = new ReadmeTable($tableGateway);
+    						return $table;
+    					},
+    					'ReadmeTableGateway' => function ($sm) {
+    						$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+    						$resultSetPrototype = new ResultSet();
+    						$resultSetPrototype->setArrayObjectPrototype(new Readme());
+    						return new TableGateway('readme', $dbAdapter, null, $resultSetPrototype);
+    					},
+    			),
+    			'invokables'=>array(
+    					'serializer'=>'Model\SerializeArrayToJson',
+    					'session' => 'Zend\Session\Storage\SessionStorage',
+    			),
+    	);
     }
 }
