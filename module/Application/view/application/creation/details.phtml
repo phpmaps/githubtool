@@ -1,14 +1,40 @@
-<div class="row-fluid">
+<?php 
+try
+{
+	if($models->sess == null || $models->sess == "") {
+		/* Redirect browser */
+		header("Location: /creation/status");
+		exit;
+	}
+}
+catch (Exception $e)
+{
+	throw new Exception( 'Something really gone wrong', 0, $e);
+}
+?>
+
+
+
+<div class="row-fluid" style="margin-top:46px; margin-right:20px; margin-left:20px;">
+  <div class="span12">
+    <h3>Repo Request Form</h3>
+  </div>
+</div>
+
+<div class="row-fluid" style="margin-top:20px;">
+<div class="span12" style="padding:6px;">
 <ol class="progtrckr" data-progtrckr-steps="5">
-    <li class="progtrckr-done">Repository Details</li><!--
- --><li class="progtrckr-done">Ownership and Team</li><!--
+    <li class="progtrckr-done">Status</li><!--
+ --><li class="progtrckr-done">Details</li><!--
  --><li class="progtrckr-todo">Instructions</li><!--
  --><li class="progtrckr-todo">Requirements</li><!--
  --><li class="progtrckr-todo">Acknowlegement</li>
 </ol>
 </div>
+</div>
 
-<p>This is the sess val: <?php echo $models->sess; ?></p>
+
+<div class="hero-unit" style="margin-top:40px;">
 <input type="hidden" maxlength="10" id="readme-value"value="<?php echo $models->id; ?>"/> 
 <input type="hidden" maxlength="60" id="readme-count" value="<?php echo count($models->features); ?>"/>
 <div class="row-fluid" style="margin-top: 28px; border-bottom: 1px solid #eeeeee;">
@@ -70,15 +96,26 @@
 <?php endforeach;?>
 </div>
   
-  
-					
+  			
 
 <div class="row-fluid" style="margin-top: 28px;">
 	<div
 		style="display: block; height: 2px; margin-top: 8px; border-top: 2px solid #eeeeee;"></div>
 	<div class="span12 offset8" style="margin-top: 10px;">
-		<a onclick="addRequirementAction();"
-			class="sp-button sp-button-icon-left ui-state-default ui-corner-all"
-			style="margin-top: 6px;"><span class="ui-icon ui-icon-seek-next"></span>Next</a>
+	
+	<?php if ($models->id != null): ?>
+	
+	<a id="next" href="<?php echo $this->url('creation', array('action' => 'instructions', 'id' => $models->id));?>" class="sp-button sp-button-icon-left ui-state-default ui-corner-all" style="margin-top: 6px;"><span class="ui-icon ui-icon-seek-next"></span> Next Part</a>
+	
+	<?php else: ?>
+	
+	<a id="next" class="sp-button sp-button-icon-left ui-state-default ui-corner-all" style="margin-top: 6px;"><span class="ui-icon ui-icon-seek-next"></span> Next Part</a>
+	
+	<?php endif; ?>
+
 	</div>
 </div>
+
+</div>
+
+

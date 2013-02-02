@@ -30,11 +30,89 @@ body {
   background-color: #57a900;
 }
 
-div.container a.brand {
-    background: url("../images/zf2-logo.png") no-repeat scroll 0 10px transparent;
-    margin-left: 0;
-    padding: 8px 20px 12px 40px;
+
+div.container.icon-area ul {
+ padding-left: 0;
+ display: inline;
+ } 
+ 
+ div.container.icon-area ul>li {
+ margin-left: 0;
+ padding: 3px 15px;
+ border-left: 1px solid #000;
+ list-style: none;
+ display: inline;
+ }
+
+
+a.brand-github {
+    background: url("../images/blacktocat-32.png") no-repeat scroll 0 10px transparent;
+    margin-left: 20px;
+	margin-top:-4px;
+	width:50px;
 }
+
+a.brand-separator {
+    background: url("../images/separator.png") no-repeat scroll 0 10px transparent;
+	width:100px;
+	margin-top:-24px;
+    margin-left: 52px;
+}
+
+a.brand-esri {
+    background: url("../images/esri_logo4.png") no-repeat scroll 0 10px transparent;
+	width:160px;
+    margin-left: 68px;
+	margin-top: -41px;
+	
+}
+
+.navbar-text img {
+  max-height:30px;
+  width:auto;
+  vertical-align:middle;
+}
+
+.sub-menu {
+	position:fixed;
+	top:62px;
+	left:0;
+	width:100%;
+	color:#3366cc;
+	height:42px;
+	background:#FFFFFF;
+	font-weight: bold;
+}
+
+.sub-menu ul{
+padding: 6px 0 7px 0; /*6px should equal top padding of "ul li a" below, 7px should equal bottom padding + bottom border of "ul li a" below*/
+margin: 0;
+text-align: right; //set value to "left", "center", or "right"*/
+}
+
+.sub-menu ul li{
+display: inline;
+}
+
+.sub-menu ul li a {
+color: #777;
+padding: 6px 3px 4px 3px; /*top padding is 6px, bottom padding is 4px*/
+margin-right: 20px; /*spacing between each menu link*/
+text-decoration: none;
+}
+
+.sub-menu ul li a:hover {
+color: #777;
+padding: 6px 3px 4px 3px; /*top padding is 6px, bottom padding is 4px*/
+margin-right: 20px; /*spacing between each menu link*/
+text-decoration: none;
+border-bottom: 3px solid #CCC; /*bottom border is 3px*/
+}
+
+.sub-menu ul li a:hover, .underlinemenu ul li a.selected{
+border-bottom-color: #CCC;
+}
+
 
 /*Old Surf Partner Stuff*/
 
@@ -203,3 +281,6 @@ ol.progtrckr li.progtrckr-todo:before {
     font-size: 1.5em;
     bottom: -1.6em;
 }
+
+/*Footer */
+

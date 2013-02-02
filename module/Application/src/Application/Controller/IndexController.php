@@ -16,6 +16,7 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+    	$this->layout('layout/background');
         return new ViewModel();
     }
 }

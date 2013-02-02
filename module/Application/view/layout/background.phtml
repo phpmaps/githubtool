@@ -1,0 +1,139 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+        <?php echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false)?>
+
+        <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0')?>
+
+        <!-- Le styles -->
+        <?php
+								
+								echo $this->headLink ( array (
+										'rel' => 'shortcut icon',
+										'type' => 'image/vnd.microsoft.icon',
+										'href' => $this->basePath () . '/images/favicon.ico' 
+								) )->prependStylesheet ( $this->basePath () . '/css/bootstrap-responsive.min.css' )->prependStylesheet ( $this->basePath () . '/css/style.css' )->prependStylesheet ( $this->basePath () . '/css/github_site.css' )->prependStylesheet ( $this->basePath () . '/css/redmond/jquery-ui-1.9.2.custom.min.css' )->prependStylesheet ( $this->basePath () . '/css/bootstrap.min.css' )?>
+
+        <!-- Scripts -->
+        <?php
+								
+								echo $this->headScript ()->prependFile ( $this->basePath () . '/js/html5.js', 'text/javascript', array (
+										'conditional' => 'lt IE 9' 
+								) )->prependFile ( $this->basePath () . '/js/bootstrap.min.js' )->prependFile ( $this->basePath () . '/js/jquery-1.8.3.js' )->appendFile ( $this->basePath () . '/js/jquery-ui-1.9.2.custom.min.js' )->appendFile ( $this->basePath () . '/js/custom.js' )?>
+
+    </head>
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="row-fluid" style="margin-left: 30px; margin-top: 2px;">
+				<div class="span12">
+					<div class="span6">
+						<ul class="icon-area">
+							<li class="icon-area"><a class="brand-github" href="#"
+								style="display: block; height: 60px;"></a></li>
+							<li class="icon-area"><a class="brand-separator" href="#"
+								style="display: block; height: 60px;"></a></li>
+							<li class="icon-area"><a class="brand-esri" href="#"
+								style="display: block; height: 60px;"></a></li>
+						</ul>
+					</div>
+					<div class="span4 offset2">
+						<div class="navbar-text" style="padding: 4px; margin-right: 4px;">
+							<img src="http://placehold.it/30x30"><span
+								style="margin-left: 4px; margin-right: 4px;">Chuck Norris</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<div class="sub-menu">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="offset5">
+						<ul>
+							<li><a href="">staff-workflows</a></li>
+							<li><a href="">request-repository-form</a></li>
+							<li><a href="">service-hooks</a></li>
+							<li><a href="">repo-statistics</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+            <?php echo $this->content; ?>
+            <hr>
+		<footer id="footer">
+			<div class="container" style="width: 1000px;">
+				<div class="row">
+					<nav>
+						<h4>
+							Arc<span>GIS</span> for Organizations
+						</h4>
+						<ul class="footer-list">
+							<li><a href="http://www.arcgis.com/about/">Home</a></li>
+							<li><a href="http://www.arcgis.com/about/features.html">Features</a></li>
+							<li><a href="http://www.arcgis.com/about/pricing.html">Pricing</a></li>
+							<li><a href="http://www.arcgis.com/about/trial.html">30-Day Free
+									Trial</a></li>
+							<li><a href="https://www.arcgis.com/home/signin.html">Sign In</a></li>
+						</ul>
+					</nav>
+					<!--
+      <nav>
+        <h4>Arc<span>GIS</span> for Developers</h4>
+        <ul class="footer-list">
+          <li><a href="http://developers.arcgis.com/">Home</a></li>
+          <li><a href="http://developers.arcgis.com/features">Features</a></li>
+          <li><a href="http://developers.arcgis.com/pricing">Pricing</a></li>
+          <li><a href="http://developers.arcgis.com/trial">90-Day Free Trial</a></li>
+          <li><a href="http://developers.arcgis.com/sign-in">Sign In</a></li>
+        </ul>
+      </nav>
+-->
+					<nav>
+						<h4>About Esri</h4>
+						<ul class="footer-list">
+							<li><a href="http://www.esri.com/about-esri">About Us</a></li>
+							<li><a href="http://www.esri.com/careers">Careers</a></li>
+							<li><a href="http://blogs.esri.com/esri/esri-insider/">Insiders
+									Blog</a></li>
+							<li><a
+								href="http://www.esri.com/events/user-conference/index.html">Users
+									Conference</a></li>
+							<li><a href="http://www.esri.com/events/devsummit/index.html">Developer
+									Summit</a></li>
+						</ul>
+					</nav>
+
+					<nav class="last">
+						<li><a id="esri-logo-footer" href="http://esri.com">Esri</a></li>
+						<ul id="footer-social-nav">
+							<li><a class="icon-twitter" href="https://twitter.com/Esri"></a></li>
+							<li><a class="icon-facebook"
+								href="https://www.facebook.com/esrigis"></a></li>
+							<li><a class="icon-github" href="http://github.com/Esri"></a></li>
+							<li><a class="icon-email"
+								href="http://www.esri.com/about-esri/contact"></a></li>
+						</ul>
+					</nav>
+					<small id="footer-legal">© Copyright 2010-2012 Environmental
+						Systems Research Institute, Inc. | <a
+						href="http://www.esri.com/legal/privacy">Privacy</a> | <a
+						href="http://www.esri.com/legal/software-license">Legal</a>
+					</small>
+				</div>
+
+			</div>
+		</footer>
+	</div>
+	<!-- /container -->
+        <?php echo $this->inlineScript()?>
+    </body>
+</html>

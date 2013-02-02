@@ -10,6 +10,8 @@ $(window).load(function(){
 
 jQuery(function($) {
 	
+	$('.dropdown-toggle').dropdown()
+	
     $('#reponame-section').on('change', 'input', function(event){
     	var rec = $('#readme-value').val();
         var formitem = $(this);
@@ -22,6 +24,8 @@ jQuery(function($) {
             if(data.response == false){
                 // print error message
                 console.log('could not update');
+            }else{
+            	$('#next').attr('href', "/creation/instructions/" + data.details.transid);
             }
         }, 'json');
 

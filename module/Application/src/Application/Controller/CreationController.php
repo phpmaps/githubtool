@@ -26,7 +26,7 @@ class CreationController extends AbstractActionController
     	));
     }
     
-    public function readmeAction()
+    public function requirementsAction()
     {
     	$id = (int)$this->params('id');
     	if (!$id) {
@@ -253,6 +253,7 @@ class CreationController extends AbstractActionController
     
     public function detailsAction()
     {
+    	$this->layout('layout/background');
     	$id = (int)$this->params('id');
     	$session = new Container('Default');
     	$type = $session->type;
