@@ -1,7 +1,7 @@
 <?php
 return array(
     'db' => array(
-        'username' => '',
-        'password' => '',
+        'username' => 'globebet_octocat',
+        'password' => 'esrioctocat',
     ),
 );
